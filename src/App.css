@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+.page{
+  height: 100vh;
+  background: rgba(252, 246, 249, 0.78);
+  border: 3px solid hsl(0, 0%, 100%);
+  backdrop-filter: blur(4.5px);
+  border-radius: 32px;
+  display : flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.incomes{
+  height: 97vh;
+  width: 75vw;
+  background: rgba(251, 210, 231, 0.78);
+  margin-left: 40vh;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  border: 3px solid #FFFFFF;
+  border-radius: 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.forms{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2rem;
+  outline: none;
+  border: none;
+  padding: 5rem 5rem;
+  background: transparent;
+  resize: none;
+  color: rgba(34, 34, 96, 0.9);
+  &::placeholder{
+  color: rgba(34, 34, 96, 0.4);
+  }
+  }
+
+  /* .input-control{
+    width: 1vw;
+    background-color: black;
+} */
+.submit-btn{
+  button{
+      box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+      &:hover{
+          background: var(--color-green) !important;
+      }
+  }
+}
+
+/* Navbar.css */
+.navbar {
+  width: 300px;
+  height: 97vh;
+  background: rgba(251, 210, 231, 0.78);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 3px solid #FFFFFF;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
+  border-radius: 32px;
+}
+
+.nav-list {
+  list-style: none; 
+  margin-top: 5em;
+} 
+
+.nav-item {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s;
+}
+.nav-item:hover {
+  background-color: #444;
+}
+
+
+
+.total-income{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: #FCF6F9;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 2rem;
+  gap: .5rem;
+}
+
+.income-content{
+  display: flex;
+  gap: 2rem;
+}
+
+.inner-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .text{
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      p{
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--primary-color);
+          opacity: 0.8;
+      }
+  }
+}
+
+.dashboard{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  .chart-container{
+      grid-column: 1 / 4;
+      height: 400px;
+      .amount-con{
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          margin-top: 2rem;
+          .income, .expense{
+              grid-column: span 2;
+          }
+          .income, .expense, .balance{
+              background: #FCF6F9;
+              border: 2px solid #FFFFFF;
+              box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+              border-radius: 20px;
+              padding: 1rem;
+          }
+
+          .balance{
+              grid-column: 2 / 4;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              p{
+                  color: var(--color-green);
+                  opacity: 0.6;
+                  font-size: 4.5rem;
+              }
+          }
+      }
+  }
+}
+
+.history-con{
+  grid-column: 4 / -1;
+  h2{
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+}
+
+
+.cover{
+  height: 50vh;
+  width : 50vh;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0.5vh 0.5vh black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-btn{
+  height: 3.5vh;
+  width: 15vh;
+  position: relative;
+  align-items: center;
+  background-color: aqua;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 0.25em;
+}
+
+
+
+.income-item {
+  border: 2px solid #FFFFFF;;
+  border-radius: 20px;
+  background-color: #FCF6F9;
+  margin-bottom: 10px;
+  width: 700px;
+  padding: 10px;
+}
+
+.logout-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 150px;
+  padding: 0.5rem 1rem;
+  background-color: #f44336;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
